@@ -33,7 +33,7 @@ OBJ_BONUS = $(SRC_BONUS:%.c=%.o)
 
 .PHONY: all clean fclean re bonus
 
-all: $(NAME)
+all: $(NAME) bonus
 
 $(NAME): $(SRC) $(OBJ)
 	ar rcs $(NAME) $(OBJ)
