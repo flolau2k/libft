@@ -6,7 +6,7 @@
 /*   By: flauer <flauer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 14:48:24 by flauer            #+#    #+#             */
-/*   Updated: 2023/03/27 11:57:31 by flauer           ###   ########.fr       */
+/*   Updated: 2023/04/11 13:21:09 by flauer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,11 @@
 /// @brief output character to file descriptor. Uses write()
 /// @param c character to output
 /// @param fd file descriptor to output to
-void	ft_putchar_fd(char c, int fd)
+int	ft_putchar_fd(char c, int fd)
 {
-	write(fd, &c, 1);
-	return ;
+	int	ret;
+
+	ret = 0;
+	ret = write(fd, &c, 1);
+	return (ret);
 }

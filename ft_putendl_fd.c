@@ -6,7 +6,7 @@
 /*   By: flauer <flauer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 10:34:42 by flauer            #+#    #+#             */
-/*   Updated: 2023/03/27 12:13:51 by flauer           ###   ########.fr       */
+/*   Updated: 2023/04/11 13:20:54 by flauer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,12 @@
 /// Uses write()
 /// @param s string to output
 /// @param fd file descriptor
-void	ft_putendl_fd(char *s, int fd)
+int	ft_putendl_fd(char *s, int fd)
 {
-	ft_putstr_fd(s, fd);
-	ft_putchar_fd('\n', fd);
+	int	ret;
+
+	ret = 0;
+	ret += ft_putstr_fd(s, fd);
+	ret += ft_putchar_fd('\n', fd);
+	return (ret);
 }
