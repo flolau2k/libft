@@ -6,16 +6,17 @@
 #    By: flauer <flauer@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/14 11:29:08 by flauer            #+#    #+#              #
-#    Updated: 2023/04/18 15:22:11 by flauer           ###   ########.fr        #
+#    Updated: 2023/04/18 16:27:35 by flauer           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 CC = gcc
 CFLAGS = -g -Wall -Wextra -Werror
-OBJDIR=obj
+OBJDIR = obj/
+SRCDIR = src/
 
-SRC =	ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c ft_isascii.c \
+SRCS =	ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c ft_isascii.c \
 		ft_isdigit.c ft_isprint.c ft_itoa.c ft_memchr.c ft_memcmp.c ft_memcpy.c \
 		ft_memmove.c ft_memset.c ft_putchar_fd.c ft_putendl_fd.c ft_putnbr_fd.c \
 		ft_putstr_fd.c ft_split.c ft_strchr.c ft_strdup.c ft_striteri.c \
@@ -26,7 +27,10 @@ SRC =	ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c ft_isascii.c \
 		ft_lstmap.c get_next_line_utils.c get_next_line.c ft_printf.c \
 		ft_printf_utils.c ft_printf_utils_write.c ft_putnbr_base.c
 
-OBJ = $(SRC:%.c=$(OBJDIR)/%.o)
+OBJS = $(SRCS:%.c=%.o)
+
+SRC = $(addprefix $(SRCDIR), $(SRCS))
+OBJ = $(addprefix $(OBJDIR), $(OBJS))
 
 .PHONY: all clean fclean re
 
@@ -35,7 +39,7 @@ all: $(NAME)
 $(NAME): $(SRC) $(OBJ)
 	ar rcs $(NAME) $(OBJ)
 
-$(OBJDIR)/%.o: %.c
+$(OBJDIR)%.o: $(SRCDIR)%.c
 	@mkdir -p $(@D)
 	$(CC) $(CFLAGS) -c -o $@ $<
 
