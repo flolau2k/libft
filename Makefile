@@ -6,13 +6,14 @@
 #    By: flauer <flauer@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/14 11:29:08 by flauer            #+#    #+#              #
-#    Updated: 2023/04/18 14:43:03 by flauer           ###   ########.fr        #
+#    Updated: 2023/04/18 15:22:11 by flauer           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 CC = gcc
 CFLAGS = -g -Wall -Wextra -Werror
+OBJDIR=obj
 
 SRC =	ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c ft_isascii.c \
 		ft_isdigit.c ft_isprint.c ft_itoa.c ft_memchr.c ft_memcmp.c ft_memcpy.c \
@@ -23,9 +24,9 @@ SRC =	ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c ft_isascii.c \
 		ft_tolower.c ft_toupper.c ft_lstnew.c ft_lstadd_front.c ft_lstsize.c \
 		ft_lstlast.c ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c ft_lstiter.c \
 		ft_lstmap.c get_next_line_utils.c get_next_line.c ft_printf.c \
-		ft_printf_utils.c ft_printf_utils_write.c
+		ft_printf_utils.c ft_printf_utils_write.c ft_putnbr_base.c
 
-OBJ = $(SRC:%.c=%.o)
+OBJ = $(SRC:%.c=$(OBJDIR)/%.o)
 
 .PHONY: all clean fclean re
 
@@ -34,7 +35,12 @@ all: $(NAME)
 $(NAME): $(SRC) $(OBJ)
 	ar rcs $(NAME) $(OBJ)
 
+$(OBJDIR)/%.o: %.c
+	@mkdir -p $(@D)
+	$(CC) $(CFLAGS) -c -o $@ $<
+
 clean:
+	/bin/rm -rf $(OBJDIR)
 	/bin/rm -f $(OBJ)
 
 fclean: clean
