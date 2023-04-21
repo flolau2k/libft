@@ -6,7 +6,7 @@
 /*   By: flauer <flauer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 14:12:47 by flauer            #+#    #+#             */
-/*   Updated: 2023/04/18 15:02:03 by flauer           ###   ########.fr       */
+/*   Updated: 2023/04/21 13:49:29 by flauer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 # define LIBFT_H
 # include <stdlib.h>
 # include <unistd.h>
+# include "ft_printf.h"
+# include "get_next_line.h"
 # define DEC "0123456789"
 
 // Part 1: libc functions
