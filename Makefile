@@ -6,7 +6,7 @@
 #    By: flauer <flauer@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/14 11:29:08 by flauer            #+#    #+#              #
-#    Updated: 2023/04/21 14:34:55 by flauer           ###   ########.fr        #
+#    Updated: 2023/04/21 14:51:35 by flauer           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,7 +45,6 @@ $(OBJDIR)%.o: $(SRCDIR)%.c
 
 clean:
 	/bin/rm -rf $(OBJDIR)
-	/bin/rm -f $(OBJ)
 
 fclean: clean
 	/bin/rm -f $(NAME)
