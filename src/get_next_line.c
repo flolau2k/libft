@@ -6,7 +6,7 @@
 /*   By: flauer <flauer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 21:25:27 by flauer            #+#    #+#             */
-/*   Updated: 2023/04/18 16:30:39 by flauer           ###   ########.fr       */
+/*   Updated: 2023/04/21 14:31:38 by flauer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,10 @@ static char	*nl_from_state_buf(char *buf, int end)
 	char	*result;
 	size_t	len;
 
-	result = f_substr(buf, 0, end + 1);
+	result = ft_substr(buf, 0, end + 1);
 	if (!result)
 		return (NULL);
-	len = f_strlen(buf + end + 1);
+	len = ft_strlen(buf + end + 1);
 	ft_memmove(buf, buf + end + 1, len);
 	ft_bzero(buf + len, BUFFER_SIZE - len);
 	return (result);
@@ -35,7 +35,7 @@ static char	*nl_from_read_buf(char *result, char *buf)
 	i = 0;
 	if (!result)
 		return (NULL);
-	len = f_strlen(result);
+	len = ft_strlen(result);
 	while (i < len && result[i])
 	{
 		if (result[i] == '\n')
@@ -47,7 +47,7 @@ static char	*nl_from_read_buf(char *result, char *buf)
 	}
 	ft_memmove(buf, result + i, len - i);
 	ft_bzero(buf + len - i, BUFFER_SIZE - (len - i));
-	res = f_substr(result, 0, i);
+	res = ft_substr(result, 0, i);
 	free (result);
 	result = NULL;
 	return (res);

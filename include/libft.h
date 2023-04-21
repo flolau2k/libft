@@ -6,7 +6,7 @@
 /*   By: flauer <flauer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 14:12:47 by flauer            #+#    #+#             */
-/*   Updated: 2023/04/21 13:49:29 by flauer           ###   ########.fr       */
+/*   Updated: 2023/04/21 14:26:17 by flauer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@
 # include "ft_printf.h"
 # include "get_next_line.h"
 # define DEC "0123456789"
+
+typedef unsigned char uchar;
 
 // Part 1: libc functions
 int		ft_isalpha(int c);

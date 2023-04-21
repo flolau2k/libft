@@ -6,7 +6,7 @@
 /*   By: flauer <flauer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 12:28:31 by flauer            #+#    #+#             */
-/*   Updated: 2023/04/18 16:29:23 by flauer           ###   ########.fr       */
+/*   Updated: 2023/04/21 14:24:46 by flauer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@
 /// @return pointer to the buffer
 void	*ft_memset(void *b, int c, size_t len)
 {
-	unsigned char	*dst;
-	unsigned int	i;
+	uchar	*dst;
+	size_t	i;
 
 	i = 0;
 	dst = b;

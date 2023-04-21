@@ -6,7 +6,7 @@
 /*   By: flauer <flauer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 21:23:21 by flauer            #+#    #+#             */
-/*   Updated: 2023/04/18 14:09:17 by flauer           ###   ########.fr       */
+/*   Updated: 2023/04/21 14:36:23 by flauer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <stdbool.h>
+# include "libft.h"
 # ifndef OPEN_MAX
 #  define OPEN_MAX 1024
 # endif
@@ -23,10 +24,5 @@
 # endif
 
 char	*get_next_line(int fd);
-size_t	f_strlcpy(char *dst, const char *src, size_t dstsize);
-char	*f_substr(char const *s, unsigned int start, size_t len);
-size_t	f_strlen(const char *s);
-void	ft_bzero(const void *buf, size_t n);
-void	*ft_memmove(void *dst, const void *src, size_t len);
 
 #endif // !GET_NEXT_LINE_H
