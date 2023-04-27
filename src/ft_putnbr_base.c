@@ -6,7 +6,7 @@
 /*   By: flauer <flauer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 14:59:13 by flauer            #+#    #+#             */
-/*   Updated: 2023/04/18 16:29:38 by flauer           ###   ########.fr       */
+/*   Updated: 2023/04/27 11:41:42 by flauer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	ft_putnbr_base(size_t nbr, char *base, int fd)
 {
 	size_t	baselen;
-	int	ret;
+	int		ret;
 
 	ret = 0;
 	baselen = ft_strlen(base);

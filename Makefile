@@ -6,7 +6,7 @@
 #    By: flauer <flauer@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/14 11:29:08 by flauer            #+#    #+#              #
-#    Updated: 2023/04/21 14:51:35 by flauer           ###   ########.fr        #
+#    Updated: 2023/04/27 11:44:42 by flauer           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,7 +37,8 @@ OBJ = $(addprefix $(OBJDIR), $(OBJS))
 all: $(NAME)
 
 $(NAME): $(SRC) $(OBJ)
-	ar rcs $(NAME) $(OBJ)
+	@echo "linking libft.a"
+	@ar rcs $(NAME) $(OBJ)
 
 $(OBJDIR)%.o: $(SRCDIR)%.c
 	@mkdir -p $(@D)

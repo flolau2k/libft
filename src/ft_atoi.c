@@ -6,7 +6,7 @@
 /*   By: flauer <flauer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 16:53:40 by flauer            #+#    #+#             */
-/*   Updated: 2023/04/18 16:28:12 by flauer           ###   ########.fr       */
+/*   Updated: 2023/04/27 11:44:25 by flauer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,27 +22,31 @@ static int	ft_isspace(const char c)
 /// @brief convert a string to an integer
 /// @param str input string with decimal number
 /// @return number as integer
-int	ft_atoi(const char *str)
+int	*ft_atoi(const char *str)
 {
-	int	ret;
-	int	i;
-	int	sign;
+	t_atoi	st;
 
-	ret = 0;
-	i = 0;
-	sign = 1;
-	while (str[i] && ft_isspace(str[i]))
-		i++;
-	if (str[i] == '+' || str[i] == '-')
+	st.ret = malloc(sizeof(*st.ret));
+	if (!st.ret)
+		return (NULL);
+	st.i = 0;
+	st.sign = 1;
+	st.val = 0;
+	while (str[st.i] && ft_isspace(str[st.i]))
+		st.i++;
+	if (str[st.i] == '+' || str[st.i] == '-')
 	{
-		if (str[i] == '-')
-			sign *= -1;
-		i++;
+		if (str[st.i] == '-')
+			st.sign *= -1;
+		st.i++;
 	}
-	while (ft_isdigit(str[i]))
+	while (str[st.i] && ft_isdigit(str[st.i]))
 	{
-		ret = (ret * 10) + (str[i] - '0');
-		i++;
+		st.val = (st.val * 10) + (str[st.i++] - '0');
+		if (st.val > INT32_MAX || (st.val > 2147483648 && st.sign == -1))
+			return (free(st.ret), st.ret = NULL, NULL);
 	}
-	return (ret * sign);
+	if (str[st.i] && !ft_isspace(str[st.i]))
+		return (free(st.ret), st.ret = NULL, NULL);
+	return (*st.ret = st.val * st.sign, st.ret);
 }

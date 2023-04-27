@@ -6,7 +6,7 @@
 /*   By: flauer <flauer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 14:12:47 by flauer            #+#    #+#             */
-/*   Updated: 2023/04/21 14:26:17 by flauer           ###   ########.fr       */
+/*   Updated: 2023/04/27 11:39:56 by flauer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,12 @@
 # define LIBFT_H
 # include <stdlib.h>
 # include <unistd.h>
+# include <stdbool.h>
 # include "ft_printf.h"
 # include "get_next_line.h"
 # define DEC "0123456789"
 
-typedef unsigned char uchar;
+typedef unsigned char	t_uchar;
 
 // Part 1: libc functions
 int		ft_isalpha(int c);
@@ -41,7 +42,7 @@ char	*ft_strrchr(const char *s, int c);
 void	*ft_memchr(const void *s, int c, size_t n);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
-int		ft_atoi(const char *str);
+int		*ft_atoi(const char *str);
 void	*ft_calloc(size_t count, size_t size);
 char	*ft_strdup(const char *s1);
 
@@ -76,6 +77,14 @@ void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 
 // Part 4: added later
-int	ft_putnbr_base(size_t nbr, char *base, int fd);
+typedef struct s_atoi
+{
+	int		*ret;
+	int		i;
+	int		sign;
+	size_t	val;
+}	t_atoi;
+
+int		ft_putnbr_base(size_t nbr, char *base, int fd);
 
 #endif
