@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: flauer <flauer@student.42.fr>              +#+  +:+       +#+        */
+/*   By: flauer <flauer@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 14:12:47 by flauer            #+#    #+#             */
-/*   Updated: 2023/04/27 11:39:56 by flauer           ###   ########.fr       */
+/*   Updated: 2023/04/28 11:59:14 by flauer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,9 @@
 # include "ft_printf.h"
 # include "get_next_line.h"
 # define DEC "0123456789"
+# ifdef __linux
+#  include <stdint.h>
+# endif
 
 typedef unsigned char	t_uchar;
 

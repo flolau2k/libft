@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: flauer <flauer@student.42.fr>              +#+  +:+       +#+        */
+/*   By: flauer <flauer@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 16:53:40 by flauer            #+#    #+#             */
-/*   Updated: 2023/04/27 11:44:25 by flauer           ###   ########.fr       */
+/*   Updated: 2023/04/28 11:56:37 by flauer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ int	*ft_atoi(const char *str)
 	while (str[st.i] && ft_isdigit(str[st.i]))
 	{
 		st.val = (st.val * 10) + (str[st.i++] - '0');
-		if (st.val > INT32_MAX || (st.val > 2147483648 && st.sign == -1))
+		if ((st.sign == 1 && st.val > INT32_MAX) || (st.val > 2147483648 && st.sign == -1))
 			return (free(st.ret), st.ret = NULL, NULL);
 	}
 	if (str[st.i] && !ft_isspace(str[st.i]))

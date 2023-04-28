@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: flauer <flauer@student.42.fr>              +#+  +:+       +#+        */
+/*   By: flauer <flauer@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 21:25:27 by flauer            #+#    #+#             */
-/*   Updated: 2023/04/21 14:31:38 by flauer           ###   ########.fr       */
+/*   Updated: 2023/04/28 11:32:06 by flauer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,9 +107,9 @@ char	*get_next_line(int fd)
 	result = NULL;
 	if (fd > OPEN_MAX || fd < 0)
 		return (NULL);
-	while (buf[fd] && buf[fd][i] && buf[fd][i] != '\n')
+	while (buf[fd][i] && buf[fd][i] != '\n')
 		i++;
-	if (buf[fd] && buf[fd][i] == '\n')
+	if (buf[fd][i] == '\n')
 		return (nl_from_state_buf(buf[fd], i));
 	result_size = i;
 	if (!read_recursive(fd, &result, &result_size))
