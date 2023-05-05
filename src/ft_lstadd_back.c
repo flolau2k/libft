@@ -6,7 +6,7 @@
 /*   By: flauer <flauer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 18:41:32 by flauer            #+#    #+#             */
-/*   Updated: 2023/04/18 16:28:46 by flauer           ###   ########.fr       */
+/*   Updated: 2023/05/05 16:17:11 by flauer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,8 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 	if (!last_elm)
 		*lst = new;
 	else
+	{
 		last_elm->next = new;
+		new->prev = last_elm;
+	}
 }

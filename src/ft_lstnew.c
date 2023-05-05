@@ -6,7 +6,7 @@
 /*   By: flauer <flauer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 18:10:15 by flauer            #+#    #+#             */
-/*   Updated: 2023/04/18 16:29:04 by flauer           ###   ########.fr       */
+/*   Updated: 2023/05/05 16:14:42 by flauer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,6 @@ t_list	*ft_lstnew(void *content)
 		return (NULL);
 	ret->content = content;
 	ret->next = NULL;
+	ret->prev = NULL;
 	return (ret);
 }
