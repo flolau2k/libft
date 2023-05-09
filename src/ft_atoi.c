@@ -6,7 +6,7 @@
 /*   By: flauer <flauer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 16:53:40 by flauer            #+#    #+#             */
-/*   Updated: 2023/05/09 13:53:06 by flauer           ###   ########.fr       */
+/*   Updated: 2023/05/09 14:08:28 by flauer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@ static int	ft_isspace(const char c)
 long long	ft_atoi(const char *str)
 {
 	long long	ret;
-	int		i;
-	int		sign;
+	int			i;
+	int			sign;
 
 	ret = 0;
 	i = 0;
