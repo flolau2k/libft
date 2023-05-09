@@ -6,7 +6,7 @@
 /*   By: flauer <flauer@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 14:12:47 by flauer            #+#    #+#             */
-/*   Updated: 2023/05/09 10:29:18 by flauer           ###   ########.fr       */
+/*   Updated: 2023/05/09 12:58:25 by flauer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 #  include <stdint.h>
 # endif
 
-typedef unsigned char t_uchar;
+typedef unsigned char	t_uchar;
 
 // Part 1: libc functions
 int		ft_isalpha(int c);
@@ -80,6 +80,6 @@ void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 
 // Part 4: added later
-int	ft_putnbr_base(size_t nbr, char *base, int fd);
+int		ft_putnbr_base(size_t nbr, char *base, int fd);
 
 #endif
