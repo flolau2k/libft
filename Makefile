@@ -6,12 +6,12 @@
 #    By: flauer <flauer@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/14 11:29:08 by flauer            #+#    #+#              #
-#    Updated: 2023/04/27 11:44:42 by flauer           ###   ########.fr        #
+#    Updated: 2023/05/11 12:31:16 by flauer           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
-CC = gcc
+CC = cc
 CFLAGS = -g -Wall -Wextra -Werror
 OBJDIR = obj/
 SRCDIR = src/
