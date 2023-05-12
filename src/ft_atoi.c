@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: flauer <flauer@student.42heilbronn.de>     +#+  +:+       +#+        */
+/*   By: flauer <flauer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 16:53:40 by flauer            #+#    #+#             */
-/*   Updated: 2023/05/09 10:27:51 by flauer           ###   ########.fr       */
+/*   Updated: 2023/05/09 14:08:28 by flauer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,11 @@ static int	ft_isspace(const char c)
 /// @brief convert a string to an integer
 /// @param str input string with decimal number
 /// @return number as integer
-long	ft_atoi(const char *str)
+long long	ft_atoi(const char *str)
 {
-	long	ret;
-	int		i;
-	int		sign;
+	long long	ret;
+	int			i;
+	int			sign;
 
 	ret = 0;
 	i = 0;
