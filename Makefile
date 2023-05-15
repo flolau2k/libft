@@ -3,21 +3,22 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: flauer <flauer@student.42heilbronn.de>     +#+  +:+       +#+         #
+#    By: flauer <flauer@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/14 11:29:08 by flauer            #+#    #+#              #
-#    Updated: 2023/05/12 09:02:12 by flauer           ###   ########.fr        #
+#    Updated: 2023/05/15 15:21:09 by flauer           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 
-CC = cc
 UNAME = $(shell uname)
 ifeq ($(UNAME), Linux)
-	CFLAGS = -g -Wall -Wextra -Werror -mcmodel=large
+	CC =		gcc
+	CFLAGS =	-g -Wall -Wextra -Werror -mcmodel=large
 else ifeq ($(UNAME), Darwin)
-	CFLAGS = -g -Wall -Wextra -Werror
+	CC =		cc
+	CFLAGS =	-g -Wall -Wextra -Werror
 endif
 
 OBJDIR = obj/
