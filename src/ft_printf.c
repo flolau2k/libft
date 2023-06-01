@@ -6,7 +6,7 @@
 /*   By: flauer <flauer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/07 22:17:53 by flauer            #+#    #+#             */
-/*   Updated: 2023/04/18 16:29:31 by flauer           ###   ########.fr       */
+/*   Updated: 2023/06/01 14:59:14 by flauer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,33 @@ int	ft_printf(const char *format, ...)
 			st.i++;
 	}
 	if (!f_putst(1, format, &st))
+		return (-1);
+	va_end(st.args);
+	return (st.bytes);
+}
+
+int	ft_fprintf(int fd, const char *format, ...)
+{
+	t_printf	st;
+
+	if (!format)
+		return (-1);
+	st.i = 0;
+	st.cws = 0;
+	st.bytes = 0;
+	va_start(st.args, format);
+	while (format[st.i])
+	{
+		if (format[st.i] == '%')
+		{
+			if (!f_putst(fd, format, &st) || !handle_flag((char *)format, &st))
+				return (-1);
+			st.cws = st.i;
+		}
+		else
+			st.i++;
+	}
+	if (!f_putst(fd, format, &st))
 		return (-1);
 	va_end(st.args);
 	return (st.bytes);

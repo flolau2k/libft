@@ -6,7 +6,7 @@
 /*   By: flauer <flauer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/07 22:18:17 by flauer            #+#    #+#             */
-/*   Updated: 2023/04/18 14:49:42 by flauer           ###   ########.fr       */
+/*   Updated: 2023/06/01 15:04:59 by flauer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ typedef struct s_printf
 }	t_printf;
 
 int		ft_printf(const char *format, ...);
+int		ft_fprintf(int fd, const char *format, ...);
 bool	f_putptr(void *ptr, int fd, int *bytes_written);
 bool	f_putnbase(size_t nbr, char *base, int fd, int *bytes_written);
 bool	f_putnbr_fd(int n, int fd, int *bytes_written);
