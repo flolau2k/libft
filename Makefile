@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: flauer <flauer@student.42.fr>              +#+  +:+       +#+         #
+#    By: flauer <flauer@student.42heilbronn.de>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/14 11:29:08 by flauer            #+#    #+#              #
-#    Updated: 2023/05/17 10:45:56 by flauer           ###   ########.fr        #
+#    Updated: 2023/06/18 14:37:25 by flauer           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,9 +42,11 @@ $(NAME): $(SRC) $(OBJ)
 	@echo "linking libft.a"
 	@ar rcs $(NAME) $(OBJ)
 
-$(OBJDIR)%.o: $(SRCDIR)%.c
-	@mkdir -p $(@D)
+$(OBJDIR)%.o: $(SRCDIR)%.c | $(OBJDIR)
 	$(CC) $(CFLAGS) -c -o $@ $<
+
+$(OBJDIR):
+	@mkdir -p $(@D)
 
 clean:
 	/bin/rm -rf $(OBJDIR)
