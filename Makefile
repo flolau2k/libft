@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: flauer <flauer@student.42heilbronn.de>     +#+  +:+       +#+         #
+#    By: flauer <flauer@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/14 11:29:08 by flauer            #+#    #+#              #
-#    Updated: 2023/06/18 14:37:25 by flauer           ###   ########.fr        #
+#    Updated: 2023/06/19 11:47:22 by flauer           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,8 +15,8 @@ NAME = libft.a
 CC =		cc
 CFLAGS =	-g -Wall -Wextra -Werror
 
-OBJDIR = obj/
-SRCDIR = src/
+OBJDIR = obj
+SRCDIR = src
 
 SRCS =	ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c ft_isascii.c \
 		ft_isdigit.c ft_isprint.c ft_itoa.c ft_memchr.c ft_memcmp.c ft_memcpy.c \
@@ -31,8 +31,8 @@ SRCS =	ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c ft_isascii.c \
 
 OBJS = $(SRCS:%.c=%.o)
 
-SRC = $(addprefix $(SRCDIR), $(SRCS))
-OBJ = $(addprefix $(OBJDIR), $(OBJS))
+SRC = $(addprefix $(SRCDIR)/, $(SRCS))
+OBJ = $(addprefix $(OBJDIR)/, $(OBJS))
 
 .PHONY: all clean fclean re
 
@@ -42,11 +42,11 @@ $(NAME): $(SRC) $(OBJ)
 	@echo "linking libft.a"
 	@ar rcs $(NAME) $(OBJ)
 
-$(OBJDIR)%.o: $(SRCDIR)%.c | $(OBJDIR)
+$(OBJDIR)/%.o: $(SRCDIR)/%.c | $(OBJDIR)
 	$(CC) $(CFLAGS) -c -o $@ $<
 
 $(OBJDIR):
-	@mkdir -p $(@D)
+	@mkdir -p $(OBJDIR)
 
 clean:
 	/bin/rm -rf $(OBJDIR)
