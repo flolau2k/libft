@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isspace.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: flauer <flauer@student.42.fr>              +#+  +:+       +#+        */
+/*   By: flauer <flauer@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/21 15:04:24 by flauer            #+#    #+#             */
-/*   Updated: 2023/06/21 15:07:54 by flauer           ###   ########.fr       */
+/*   Updated: 2023/06/21 21:09:52 by flauer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,9 @@
 /// @brief check if input is a whitespace character
 /// @param c input
 /// @return 1 if whitespace, 0 if not.
-int	ft_isspace(char c)
+int	ft_isspace(const char c)
 {
-	if ((c >= 9 && c <= 13) || c == 32)
+	if (c == 32 || (c >= 9 && c <= 13))
 		return (1);
-	else
-		return (0);
+	return (0);
 }
