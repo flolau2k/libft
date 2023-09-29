@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: flauer <flauer@student.42.fr>              +#+  +:+       +#+        */
+/*   By: flauer <flauer@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 14:48:24 by flauer            #+#    #+#             */
-/*   Updated: 2023/04/18 16:29:33 by flauer           ###   ########.fr       */
+/*   Updated: 2023/09/29 16:31:03 by flauer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include	"../include/libft.h"
+#include "../include/libft.h"
 
 /// @brief output character to file descriptor. Uses write()
 /// @param c character to output
