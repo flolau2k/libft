@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: flauer <flauer@student.42.fr>              +#+  +:+       +#+        */
+/*   By: flauer <flauer@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 14:48:24 by flauer            #+#    #+#             */
-/*   Updated: 2023/04/18 16:29:33 by flauer           ###   ########.fr       */
+/*   Updated: 2023/11/02 10:30:13 by flauer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ int	ft_putchar_fd(char c, int fd)
 {
 	int	ret;
 
-	ret = 0;
 	ret = write(fd, &c, 1);
 	return (ret);
 }
