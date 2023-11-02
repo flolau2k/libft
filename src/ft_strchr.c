@@ -6,7 +6,7 @@
 /*   By: flauer <flauer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 15:45:56 by flauer            #+#    #+#             */
-/*   Updated: 2023/04/18 16:29:49 by flauer           ###   ########.fr       */
+/*   Updated: 2023/07/11 14:56:25 by flauer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 /// @brief locate the first occurence of char c in string s
 /// @param s input string
 /// @param c character to look for (converted to char)
-/// @return pointer to the first occurence of c in s
+/// @return pointer to the first occurence of c in s, NULL if c is not in s.
 char	*ft_strchr(const char *s, int c)
 {
 	int	len;

@@ -1,24 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   ft_isspace.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: flauer <flauer@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/14 14:48:24 by flauer            #+#    #+#             */
-/*   Updated: 2023/11/02 10:33:26 by flauer           ###   ########.fr       */
+/*   Created: 2023/06/21 15:04:24 by flauer            #+#    #+#             */
+/*   Updated: 2023/06/21 21:09:52 by flauer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/libft.h"
 
-/// @brief output character to file descriptor. Uses write()
-/// @param c character to output
-/// @param fd file descriptor to output to
-int	ft_putchar_fd(char c, int fd)
+/// @brief check if input is a whitespace character
+/// @param c input
+/// @return 1 if whitespace, 0 if not.
+int	ft_isspace(const char c)
 {
-	int	ret;
-
-	ret = write(fd, &c, 1);
-	return (ret);
+	if (c == 32 || (c >= 9 && c <= 13))
+		return (1);
+	return (0);
 }
